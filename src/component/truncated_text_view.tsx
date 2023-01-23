@@ -116,7 +116,7 @@ export const TruncatedTextView = (props: Props) => {
             onTextLayout={_handleTextLayout}
           >
             {fullText}
-            {/* {_shouldShowTailView && '\n'} */}
+            {_shouldShowTailView && '\n'}
           </Text>
 
           {_shouldShowTailView && (
