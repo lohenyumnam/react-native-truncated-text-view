@@ -1,6 +1,6 @@
 {
   "name": "react-native-truncated-text-view",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Effortlessly truncate and expand text in React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
