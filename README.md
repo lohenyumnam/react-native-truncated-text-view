@@ -72,7 +72,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-react-native-truncated-text-view is MIT [LICENSE](LICENSE)
+react-native-truncated-text-view is [MIT licensed](LICENSE)
 
 ---
 
