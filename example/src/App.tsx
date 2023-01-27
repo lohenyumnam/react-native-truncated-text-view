@@ -14,9 +14,10 @@ export default function App() {
             style={styles.textStyle}
             tailTextStyle={styles.tailText}
             numberOfLines={5}
-            enableShowLess={true}
+            enableShowLess={false}
             containerStyle={styles.textContainer}
           />
+
           <TruncatedTextView
             text={DATA}
             style={styles.textStyle}
@@ -24,7 +25,18 @@ export default function App() {
             numberOfLines={5}
             enableShowLess={false}
             containerStyle={styles.textContainer}
+            enableLayoutAnimation={false}
           />
+
+          <TruncatedTextView
+            text={DATA}
+            style={styles.textStyle}
+            tailTextStyle={styles.tailText}
+            numberOfLines={5}
+            enableShowLess={true}
+            containerStyle={styles.textContainer}
+          />
+
           <TruncatedTextView
             text={DATA}
             style={styles.textStyle}

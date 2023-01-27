@@ -36,7 +36,7 @@ export const useTruncatedLogic = (params: Params) => {
     });
     return _lines[whichLine];
   }, [_isExpanded, numberOfLine, textLines]);
-  console.log('🚀 - file: useTruncatedLogic.ts:29 - lastLine', lastLine);
+  // console.log('🚀 - file: useTruncatedLogic.ts:29 - lastLine', lastLine);
 
   const _tailPosition = useMemo(() => {
     const _seeMoreWidth = _seeMoreContainerLayout?.width ?? 0;
