@@ -52,19 +52,19 @@ export default function App() {
 
 ## API
 
-| Prop                  | Type                 | Required | Default                | Description                                     |
-| --------------------- | -------------------- | -------- | ---------------------- | ----------------------------------------------- |
-| text                  | string               | No       |                        | The text to be displayed                        |
-| style                 | StyleProp<TextStyle> | No       |                        | Style for the text                              |
-| tailTextStyle         | StyleProp<TextStyle> | No       |                        | Style for the tail text                         |
-| containerStyle        | StyleProp<ViewStyle> | No       |                        | Style for the container                         |
-| lineHeight            | number               | No       | 21                     | The line height for the text                    |
-| numberOfLines         | number               | No       | DEFAULT_NUMBER_OF_LINE | The number of lines to be displayed             |
-| enableShowLess        | boolean              | No       | true                   | Whether to enable the show less functionality   |
-| collapsedText         | string               | No       | .. See more            | The collapsed text to be displayed              |
-| expandedText          | string               | No       | .. See Less            | The expanded text to be displayed               |
-| enableOnPressToggle   | boolean              | No       | true                   | Whether to enable on press toggle functionality |
-| enableLayoutAnimation | boolean              | No       | true                   | Whether to enable layout animation              |
+| Prop                  | Type                 | Required | Default     | Description                                     |
+| --------------------- | -------------------- | -------- | ----------- | ----------------------------------------------- |
+| text                  | string               | No       |             | The text to be displayed                        |
+| style                 | StyleProp<TextStyle> | No       |             | Style for the text                              |
+| tailTextStyle         | StyleProp<TextStyle> | No       |             | Style for the tail text                         |
+| containerStyle        | StyleProp<ViewStyle> | No       |             | Style for the container                         |
+| lineHeight            | number               | No       | 21          | The line height for the text                    |
+| numberOfLines         | number               | No       | 2           | The number of lines to be displayed             |
+| enableShowLess        | boolean              | No       | true        | Whether to enable the show less functionality   |
+| collapsedText         | string               | No       | .. See more | The collapsed text to be displayed              |
+| expandedText          | string               | No       | .. See Less | The expanded text to be displayed               |
+| enableOnPressToggle   | boolean              | No       | true        | Whether to enable on press toggle functionality |
+| enableLayoutAnimation | boolean              | No       | true        | Whether to enable layout animation              |
 
 ## Contributing
 
