@@ -113,6 +113,9 @@ export const TruncatedTextView = (props: Props) => {
     });
   }, [_shouldShowTailViewAndroid, _shouldShowTailViewIOS, numberOfLines]);
 
+  // this will hide the text view if the text is empty
+  if (!fullText) return <View />;
+
   return (
     <View style={[styles.container, containerStyle]}>
       <Pressable
