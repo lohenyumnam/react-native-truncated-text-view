@@ -8,6 +8,8 @@ import {
   TextStyle,
   StyleProp,
   Platform,
+  UIManager,
+  LayoutAnimation,
   ViewStyle,
 } from 'react-native';
 import React, { useCallback, useMemo } from 'react';
@@ -25,7 +27,15 @@ type Props = {
   collapsedText?: string;
   expandedText?: string;
   enableOnPressToggle?: boolean;
+  enableLayoutAnimation?: boolean;
 };
+
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 export const TruncatedTextView = (props: Props) => {
   const { style, tailTextStyle, containerStyle } = props;
@@ -35,6 +45,7 @@ export const TruncatedTextView = (props: Props) => {
     numberOfLines = DEFAULT_NUMBER_OF_LINE,
     enableShowLess = true,
     enableOnPressToggle = true,
+    enableLayoutAnimation = true,
     collapsedText = '.. See more',
     expandedText = '.. See Less',
   } = props;
@@ -62,8 +73,14 @@ export const TruncatedTextView = (props: Props) => {
   };
 
   const _handlePress = useCallback(() => {
+    if (enableLayoutAnimation)
+      LayoutAnimation.configureNext({
+        ...LayoutAnimation.Presets.easeInEaseOut,
+        duration: 250,
+      });
+
     toggleShowFullText();
-  }, [toggleShowFullText]);
+  }, [enableLayoutAnimation, toggleShowFullText]);
 
   const _shouldShowTailViewIOS = useMemo(() => {
     const i =

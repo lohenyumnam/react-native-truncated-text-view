@@ -3,7 +3,7 @@
 Add See More in Your Text View easily
 
 <kbd>
-  <img src="https://github.com/lohenyumnam/react-native-truncated-text-view/blob/3145fd997f2b0c299d9d4df68eb29f7541dc5016/demo/assets/preview.ios.gif?raw=true" width="300">
+  <img src="https://github.com/lohenyumnam/react-native-truncated-text-view/blob/3145fd997f2b0c299d9d4df68eb29f7541dc5016/demo/assets/preview.ios.gif?raw=true" width="350">
 </kbd>
 
 ## Installation
