@@ -5,30 +5,17 @@ import {
   TextLayoutEventData,
   View,
   Pressable,
-  TextStyle,
-  StyleProp,
   Platform,
   UIManager,
   LayoutAnimation,
-  ViewStyle,
 } from 'react-native';
 import React, { useCallback, useMemo } from 'react';
 import { useTruncatedLogic } from '../logic/useTruncatedLogic';
-import { DEFAULT_NUMBER_OF_LINE } from '../contacts/general';
-
-type Props = {
-  text?: string;
-  style?: StyleProp<TextStyle>;
-  tailTextStyle?: StyleProp<TextStyle>;
-  containerStyle?: StyleProp<ViewStyle>;
-  lineHeight?: number;
-  numberOfLines?: number;
-  enableShowLess?: boolean;
-  collapsedText?: string;
-  expandedText?: string;
-  enableOnPressToggle?: boolean;
-  enableLayoutAnimation?: boolean;
-};
+import {
+  DEFAULT_LINE_HEIGHT,
+  DEFAULT_NUMBER_OF_LINE,
+} from '../contacts/general';
+import type { TruncatedTextViewProps } from 'src/types/types';
 
 if (
   Platform.OS === 'android' &&
@@ -37,11 +24,11 @@ if (
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-export const TruncatedTextView = (props: Props) => {
+export const TruncatedTextView = (props: TruncatedTextViewProps) => {
   const { style, tailTextStyle, containerStyle } = props;
   const {
     text: fullText,
-    lineHeight = 21,
+    lineHeight = DEFAULT_LINE_HEIGHT,
     numberOfLines = DEFAULT_NUMBER_OF_LINE,
     enableShowLess = true,
     enableOnPressToggle = true,
