@@ -1,4 +1,3 @@
-<kbd>
 <div align="center">
   <img src="./demo/assets/logo.png?raw=true" width="550">
 
@@ -11,7 +10,6 @@ Add See More in Your Text View easily
 </kbd>
 
 </div>
-</kbd>
 
 ## Installation
 
