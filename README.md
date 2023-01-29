@@ -1,15 +1,27 @@
-# react-native-truncated-text-view
+<kbd>
+<div align="center">
+  <img src="./demo/assets/logo.png?raw=true" width="550">
 
 Add See More in Your Text View easily
+<BR/>
+<BR/>
 
 <kbd>
-  <img src="https://github.com/lohenyumnam/react-native-truncated-text-view/blob/74cc2c46c0cea284211743399a012540dd7aa823/demo/assets/preview.ios.gif?raw=true" width="350">
+<img src="https://github.com/lohenyumnam/react-native-truncated-text-view/blob/74cc2c46c0cea284211743399a012540dd7aa823/demo/assets/preview.ios.gif?raw=true" width="350">
+</kbd>
+
+</div>
 </kbd>
 
 ## Installation
 
 ```sh
 npm install react-native-truncated-text-view
+```
+
+```sh
+# for yarn user
+yarn add react-native-truncated-text-view
 ```
 
 ## Run the Example
