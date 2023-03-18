@@ -35,6 +35,7 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
     enableLayoutAnimation = true,
     collapsedText = '.. See more',
     expandedText = '.. See Less',
+    enableTailView = true,
   } = props;
 
   const {
@@ -92,13 +93,20 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
   }, [_numberOfLine, enableShowLess, isExpanded, numberOfLines]);
 
   const _shouldShowTailView = useMemo(() => {
+    if (!enableTailView) return false;
+
     if (numberOfLines === 0) return false;
 
     return Platform.select({
       ios: _shouldShowTailViewIOS,
       android: _shouldShowTailViewAndroid,
     });
-  }, [_shouldShowTailViewAndroid, _shouldShowTailViewIOS, numberOfLines]);
+  }, [
+    _shouldShowTailViewAndroid,
+    _shouldShowTailViewIOS,
+    enableTailView,
+    numberOfLines,
+  ]);
 
   // this will hide the text view if the text is empty
   if (!fullText) return <View />;

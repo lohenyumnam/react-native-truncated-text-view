@@ -37,6 +37,11 @@ export type TruncatedTextViewProps = {
   enableShowLess?: boolean;
 
   /**
+   * Whether to enable the See more & show less  functionality, default value is true
+   */
+  enableTailView?: boolean;
+
+  /**
    * The tail text to be displayed when collapsed, default value is ".. See more"
    */
   collapsedText?: string;
