@@ -15,7 +15,7 @@ import {
   DEFAULT_LINE_HEIGHT,
   DEFAULT_NUMBER_OF_LINE,
 } from '../contacts/general';
-import type { TruncatedTextViewProps } from 'src/types/types';
+import type { TruncatedTextViewProps } from '../types/types';
 
 if (
   Platform.OS === 'android' &&
