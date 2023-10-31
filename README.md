@@ -54,6 +54,8 @@ export default function App() {
         tailTextStyle={styles.tailText}
         numberOfLines={2}
         enableShowLess={false}
+		 textPropsChild={{allowFontScaling: false}}
+         textPropsRoot={{allowFontScaling: false}}
       />
     </View>
   );
@@ -76,6 +78,14 @@ export default function App() {
 | enableOnPressToggle   | boolean              | No       | true        | Whether to enable on press toggle functionality   |
 | enableLayoutAnimation | boolean              | No       | true        | Whether to enable layout animation                |
 | enableTailView        | boolean              | No       | true        | Whether to enable Tail View (See More & See Less) |
+| textPropsRoot | [TextProps](https://reactnative.dev/docs/text-style-props#props) | No    | Default Value  | A property to apply native props to text.
+| textPropsChild | [TextProps](https://reactnative.dev/docs/text-style-props#props) | No   | Default Value  | A property to apply native props to text.
+
+## Contributors
+
+
+-  [<img src="https://github.com/BLOCKMATERIAL.png" width="30" height="30">](https://github.com/BLOCKMATERIAL) [MATERIALBLOCK](https://github.com/BLOCKMATERIAL) 
+
 
 ## Contributing
 
