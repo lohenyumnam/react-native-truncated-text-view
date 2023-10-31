@@ -57,6 +57,19 @@ export default function App() {
             enableOnPressToggle={false}
             enableTailView={false}
           />
+
+          <TruncatedTextView
+            text={DATA}
+            style={styles.textStyle}
+            tailTextStyle={styles.tailText}
+            numberOfLines={2}
+            enableShowLess={true}
+            containerStyle={styles.textContainer}
+            enableOnPressToggle={false}
+            enableTailView={false}
+            textPropsChild={{ allowFontScaling: false }}
+            textPropsRoot={{ allowFontScaling: false }}
+          />
         </ScrollView>
       </View>
     </SafeAreaView>
