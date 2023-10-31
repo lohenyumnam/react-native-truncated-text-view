@@ -1,4 +1,4 @@
-import type { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import type { StyleProp, TextStyle, TextProps, ViewStyle } from 'react-native';
 
 export type TruncatedTextViewProps = {
   /**
@@ -60,4 +60,14 @@ export type TruncatedTextViewProps = {
    * Whether to enable layout animation, default value is true
    */
   enableLayoutAnimation?: boolean;
+
+  /**
+   * Apply text props to root text
+   */
+  textPropsRoot?: TextProps;
+
+  /**
+   * Apply text props to child text
+   */
+  textPropsChild?: TextProps;
 };
