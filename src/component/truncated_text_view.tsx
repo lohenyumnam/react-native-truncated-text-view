@@ -25,7 +25,13 @@ if (
 }
 
 export const TruncatedTextView = (props: TruncatedTextViewProps) => {
-  const { style, tailTextStyle, containerStyle } = props;
+  const {
+    style,
+    tailTextStyle,
+    containerStyle,
+    textPropsRoot,
+    textPropsChild,
+  } = props;
   const {
     text: fullText,
     lineHeight = DEFAULT_LINE_HEIGHT,
@@ -129,6 +135,7 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
             style={[style, { lineHeight }]}
             numberOfLines={isExpanded ? 0 : numberOfLines}
             onTextLayout={_handleTextLayout}
+            {...textPropsRoot}
           >
             {fullText}
             {_shouldShowTailView && '\n'}
@@ -149,6 +156,7 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
               <Text
                 style={[styles.tailText, tailTextStyle, { lineHeight }]}
                 onPress={_handlePress}
+                {...textPropsChild}
               >
                 {isExpanded ? expandedText : collapsedText}
               </Text>
