@@ -1,20 +1,22 @@
+import React, { useCallback, useMemo } from 'react';
 import {
+  LayoutAnimation,
   NativeSyntheticEvent,
+  Platform,
+  Pressable,
   StyleSheet,
   Text,
   TextLayoutEventData,
-  View,
-  Pressable,
-  Platform,
   UIManager,
-  LayoutAnimation,
+  View,
 } from 'react-native';
-import React, { useCallback, useMemo } from 'react';
-import { useTruncatedLogic } from '../logic/useTruncatedLogic';
+
 import {
   DEFAULT_LINE_HEIGHT,
   DEFAULT_NUMBER_OF_LINE,
 } from '../contacts/general';
+import { useTruncatedLogic } from '../logic/useTruncatedLogic';
+
 import type { TruncatedTextViewProps } from '../types/types';
 
 if (
@@ -156,6 +158,7 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
               <Text
                 style={[styles.tailText, tailTextStyle, { lineHeight }]}
                 onPress={_handlePress}
+                suppressHighlighting={true}
                 {...textPropsChild}
               >
                 {isExpanded ? expandedText : collapsedText}
