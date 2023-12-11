@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, Text, SafeAreaView, ScrollView, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { TruncatedTextView } from 'react-native-truncated-text-view';
+
 import { DATA } from './DUMMY_TEXT';
 
 export default function App() {
@@ -35,6 +36,10 @@ export default function App() {
             numberOfLines={5}
             enableShowLess={true}
             containerStyle={styles.textContainer}
+            numberOfLineGapOnExpanded={2}
+            onChangeExpandedStatus={(isExpended) => {
+              console.log('🚀 - file: App.tsx:41 - isExpended:', isExpended);
+            }}
           />
 
           <TruncatedTextView
@@ -106,8 +111,10 @@ const styles = StyleSheet.create({
     color: 'gray',
     lineHeight: 27,
     letterSpacing: 0.7,
+    // backgroundColor: 'red',
   },
   tailText: {
     color: 'gray',
+    // marginTop: lineHeight
   },
 });
