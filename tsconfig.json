@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
     "baseUrl": "./",
     "paths": {
       "react-native-truncated-text-view": ["./src/index"]
