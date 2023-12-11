@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import {
   LayoutAnimation,
   NativeSyntheticEvent,
@@ -33,6 +33,8 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
     containerStyle,
     textPropsRoot,
     textPropsChild,
+    numberOfLineGapOnExpanded = 1,
+    onChangeExpandedStatus,
   } = props;
   const {
     text: fullText,
@@ -116,6 +118,10 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
     numberOfLines,
   ]);
 
+  useEffect(() => {
+    onChangeExpandedStatus?.(isExpanded);
+  }, [isExpanded, onChangeExpandedStatus]);
+
   // this will hide the text view if the text is empty
   if (!fullText) return <View />;
 
@@ -140,7 +146,9 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
             {...textPropsRoot}
           >
             {fullText}
-            {_shouldShowTailView && '\n'}
+            {_shouldShowTailView &&
+              '\n'.repeat(numberOfLineGapOnExpanded) +
+                `${numberOfLineGapOnExpanded === 1 ? '‎ ' : ''}`}
           </Text>
 
           {_shouldShowTailView && (
@@ -153,6 +161,9 @@ export const TruncatedTextView = (props: TruncatedTextViewProps) => {
                 {
                   left: seeMorePosition,
                 },
+                isExpanded &&
+                  numberOfLineGapOnExpanded === 1 &&
+                  styles.expandedTailTextContainer,
               ]}
             >
               <Text
@@ -178,10 +189,15 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   container: {
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+    backgroundColor: 'lightblue',
   },
   tailText: {
     color: 'black',
     fontWeight: 'bold',
+  },
+
+  expandedTailTextContainer: {
+    margin: -4,
   },
 });
