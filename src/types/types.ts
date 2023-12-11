@@ -70,4 +70,15 @@ export type TruncatedTextViewProps = {
    * Apply text props to child text
    */
   textPropsChild?: TextProps;
+
+  /**
+   * Number of Line Gap between the Tail Text and the main content
+   * @default is 1
+   */
+  numberOfLineGapOnExpanded?: number;
+
+  /**
+   * Called when expanded status changed
+   */
+  onChangeExpandedStatus?: (isExpanded: boolean) => void;
 };
